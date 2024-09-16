@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aston Martin</title>
+    <!-- link CSS -->
+    <link rel="stylesheet" href="Bootstrap/bundle.min.css">
+    <!-- SCSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg py-lg-0">
+    <di class="container-fluid d-flex justify-content-end">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mx-auto" href="#">
+        <img src="assets/Logo_AM.png" alt="Logo_AM" width="147" height="70">
+      </a>
+      <!-- Hamburger Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- First Nav -->
+        <ul class="custome-navbar-nav navbar-nav me-auto">
+            <li class="nav-item-active">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">About us</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+            </li>
+          </ul>
+
+          <!-- Second Nav -->
+           <ul class="custome-navbar-button navbar-nav ms-5">
+            <li>
+              <a href="#" class="btn btn-dark">Configure</a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-dark">Enquire</a>
+            </li>
+           </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Nav -->
+
+  <!-- Hero Sec -->
+   <div class="hero">
+    <video autoplay loop muted playsinline>
+      <source src="assets/astonmartin.mp4" type="video/mp4">
+    </video>
+    <div class="hero-desc">
+      <h5 class="ms-2">ZENITH. DRIVEN.</h5>
+      <h1 class="ms-2">Vanquish</h1>
+      <p>
+        <a href="#" class="btn btn-light align-content-center">Explore</a>
+        <a href="#" class="btn btn-dark align-content-center">Configure</a>
+      </p>
+    </div>
+   </div>
+   <!-- End Hero -->
+
+   <!-- About -->
+   <div class="about">
+    <div class="container me-auto">
+      <div class="row justify-content-center">
+        <h4 class="fw-medium me-0">About Us</h4>
+        <p class="reveal">We have combined next level, ultra-luxury performance with British-cool sports car styling to deliver a crowning Aston Martin V12 flagship
+            for the ages.</p>
+      </div>
+    </div>
+   </div>
+   <!-- End About -->
+
+   <!-- Product -->
+   <div class="slider-product">
+     <input type="radio" name="slider" id="slide1" checked>
+     <input type="radio" name="slider" id="slide2">
+     <input type="radio" name="slider" id="slide3">
+ 
+     <div class="slide first">
+       <video src="assets/DB12.mp4" autoplay muted loop></video>
+       <div class="content">
+         <h2>ICON. DRIVEN.</h2>
+         <h1>DB12</h1>
+         <button class="explore-btn">Explore</button>
+         <button class="configure-btn">Configure</button>
+       </div>
+     </div>
+     <div class="slide">
+       <video src="assets/Vanquish.mp4" autoplay muted loop></video>
+       <div class="content">
+         <h2>ZENITH. DRIVEN.</h2>
+         <h1>Vanquish</h1>
+         <button class="explore-btn">Explore</button>
+         <button class="configure-btn">Configure</button>
+       </div>
+     </div>
+     <div class="slide">
+       <video src="assets/Vantage.mp4" autoplay muted loop></video>
+       <div class="content">
+         <h2>THRILL. DRIVEN.</h2>
+         <h1>Vatage</h1>
+         <button class="explore-btn">Explore</button>
+         <button class="configure-btn">Configure</button>
+       </div>
+     </div>
+ 
+     <!-- Navigation dots -->
+     <div class="nav-auto">
+       <div class="auto-btn1"></div>
+       <div class="auto-btn2"></div>
+       <div class="auto-btn3"></div>
+     </div>
+    </div>
+
+  <!-- Manual Navigation -->
+  <div class="nav-manual">
+    <label for="video1" class="manual-btn"></label>
+    <label for="video2" class="manual-btn"></label>
+    <label for="video3" class="manual-btn"></label>
+  </div>
+</div>
+
+   <!-- Driver -->
+   <section class="testimonials-drivers">
+    <div class="driver">
+      <img src="assets/FernandoA.webp" alt="Fernando Alonso">
+      <div class="driver-info">
+        <h4>MEET THE AMF1™ DRIVERS</h4>
+        <h2>FERNANDO ALONSO</h2>
+        <a href="#" class="btn-driver">View profile <span>→</span></a>
+      </div>
+    </div>
+  
+    <div class="driver">
+      <img src="assets/LanceS.webp" alt="Lance Stroll">
+      <div class="driver-info">
+        <h4>MEET THE AMF1™ DRIVERS</h4>
+        <h2>LANCE STROLL</h2>
+        <a href="#" class="btn-driver">View profile <span>→</span></a>
+      </div>
+    </div>
+   </section>
+   <!-- End Driver -->
+
+   <!-- Blog -->
+    <div class="news">
+      <div class="container">
+        <div class="row">
+          
+        </div>
+      </div>
+    </div>
+    
+  <!-- Link JS -->
+  <script src="Bootstrap/bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

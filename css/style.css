@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+body {
+  background-color: #fff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  font-family: "Inter";
+  background: rgba(0, 0, 0, 0.4); /* Transparansi latar belakang */
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px); /* Efek blur pada latar belakang */
+  position: fixed; /* Agar navbar tetap di atas */
+  width: 100%; /* Lebar penuh */
+  height: 65px;
+  top: 0; /* Menempel di atas halaman */
+  z-index: 1030; /* Agar navbar berada di atas elemen lainnya */
+}
+.navbar .custome-navbar-nav a {
+  font-weight: 400;
+  position: relative;
+  left: 40px;
+  transition: 0.3s all ease-in-out;
+  color: #fff;
+}
+.navbar .navbar-brand {
+  position: absolute;
+  left: 50%;
+  margin-bottom: 10px;
+  transform: translateX(-50%);
+}
+.navbar .navbar-toggler {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%);
+}
+.navbar .btn {
+  position: relative;
+  border-radius: 0%;
+  font-family: "Inter";
+  margin-right: 12px;
+  right: 40px;
+  box-shadow: inset;
+}
+
+.container-fluid {
+  position: relative;
+}
+
+.hero {
+  position: relative; /* Referensi untuk positioning absolut di dalamnya */
+  width: 100%;
+  height: 100vh; /* Full height sesuai viewport */
+  overflow: hidden; /* Mencegah konten melebihi area hero */
+}
+
+.hero video {
+  position: absolute; /* Posisi absolut agar bisa ditumpangkan ke area hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Memastikan video menutupi seluruh area tanpa mengubah rasio */
+  z-index: 1; /* Z-index lebih rendah agar berada di belakang konten lainnya */
+}
+
+.hero-desc {
+  position: absolute; /* Posisi absolute agar bisa diatur di kiri bawah */
+  bottom: 60px; /* Jarak dari bawah */
+  left: 75px; /* Jarak dari kiri */
+  z-index: 2; /* Z-index lebih tinggi agar di depan video */
+  font-family: "Inter";
+  color: white; /* Warna teks agar kontras dengan latar belakang */
+  text-align: left; /* Rata kiri untuk teks */
+}
+.hero-desc h1 {
+  font-size: 53px;
+}
+.hero-desc h5 {
+  font-size: 18px;
+  font-weight: normal;
+}
+.hero-desc a {
+  width: 144px;
+  height: 57px;
+  border-radius: 0%;
+  font-family: "Montserrat";
+  box-shadow: inset;
+  margin-left: 12px;
+  margin-top: 40px;
+  left: 60px;
+  top: 50px;
+}
+
+.about {
+  font-family: "Montserrat";
+  padding: 20px 0;
+  padding-bottom: 50px;
+}
+.about h4 {
+  color: #851313;
+  font-size: 18px;
+  margin-top: 85px;
+  margin-left: 20px;
+}
+.about p {
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1.6;
+  padding-top: 20px;
+  max-width: 900px;
+}
+
+.testimonials-drivers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  gap: 0;
+  height: 100vh;
+}
+.testimonials-drivers .driver {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+.testimonials-drivers .driver img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.testimonials-drivers .driver-info {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  color: white;
+}
+.testimonials-drivers .driver-info h4 {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.testimonials-drivers .driver-info h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+.testimonials-drivers .btn-driver {
+  display: inline-block;
+  text-decoration: none;
+  bottom: 0;
+  color: #fff;
+  font-size: 16px;
+}
+.testimonials-drivers .btn:hover {
+  -webkit-text-decoration: #fff;
+          text-decoration: #fff;
+  inline-size: auto;
+  transition: 0.3 ease-in;
+}
+
+.slider-product {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin-bottom: 0;
+  /* Display the first slide */
+  /* Automatic navigation dots */
+  /* Manual navigation buttons */
+}
+.slider-product .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.slider-product input[type=radio] {
+  display: none;
+}
+.slider-product .slide video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slider-product .content {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: white;
+  font-family: "Inter";
+  text-align: center;
+}
+.slider-product h1 {
+  font-size: 55px;
+  margin: 10px 0;
+}
+.slider-product h2 {
+  font-size: 18px;
+}
+.slider-product button {
+  padding: 10px 20px;
+  margin: 10px;
+  width: 144px;
+  height: 57px;
+  border: none;
+  font-family: "Montserrat";
+  cursor: pointer;
+}
+.slider-product .explore-btn {
+  background-color: #ffffff;
+  color: #00a651;
+}
+.slider-product .configure-btn {
+  background-color: #333;
+  color: white;
+}
+.slider-product #slide1:checked ~ .first {
+  display: block;
+}
+.slider-product #slide2:checked ~ .slide:nth-child(2) {
+  display: block;
+}
+.slider-product #slide3:checked ~ .slide:nth-child(3) {
+  display: block;
+}
+.slider-product .nav-auto {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.slider-product .nav-auto div {
+  width: 12px;
+  height: 12px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin: 5px;
+  background-color: transparent;
+  transition: 0.3s ease;
+}
+.slider-product .nav-manual {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+}
+.slider-product .manual-btn {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: 0.3s ease;
+}
+.slider-product .manual-btn:hover {
+  background: white;
+}/*# sourceMappingURL=style.css.map */
