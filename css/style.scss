@@ -9,10 +9,13 @@ $font-family: "Inter";
 $white: #fff;
 $black: #000;
 $red: #851313;
+$primary: #3B5D50;
 
 body {
     background-color: $white;
 }
+
+// Navbar
 .navbar {
     display: flex;
     align-items: center;
@@ -30,15 +33,43 @@ body {
             font-weight: 400;
             position: relative;
             left: 40px;
-            transition: .3s all ease-in-out;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animasi untuk warna dan posisi */
             color: $white;
+    
+            &:hover {
+                color: lighten($white, 20%); /* Warna teks berubah saat hover */
+                transform: translateY(-5px); /* Sedikit naik saat hover */
+            }
+    
+            /* Underline animasi muncul saat hover */
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                width: 0;
+                height: 2px;
+                background-color: $white;
+                transition: width 0.3s ease-in-out;
+            }
+    
+            &:hover::after {
+                width: 100%; /* Underline memanjang saat hover */
+            }
         }
     }
+    
     .navbar-brand {
         position: absolute;
         left: 50%;
         margin-bottom: 10px;
         transform: translateX(-50%);
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Animasi transformasi dan opacity */
+    
+        &:hover {
+            transform: translateX(-50%) scale(1.1); /* Memperbesar sedikit saat hover */
+            opacity: 1.5; /* Sedikit transparan saat hover */
+        }
     }
     
     .navbar-toggler {
@@ -46,20 +77,38 @@ body {
         left: 0;
         top: 50%;
         transform: translate(-50%);
+        transition: color 0.3s ease-in-out; /* Animasi warna saat hover */
+    
+        &:hover {
+            color: lighten($white, 20%); /* Warna berubah saat hover */
+        }
     }
+    
     .btn {
         position: relative;
-        border-radius: 0%;
+        border-radius: 0;
         font-family: $font-family;
         margin-right: 12px;
         right: 40px;
-        box-shadow: inset;
+        color: $white;
+        background-color: #383838;
+        padding: 10px 20px;
+        font-size: 16px;
+        transition: all 0.3s ease-in-out; /* Animasi semua perubahan saat hover */
+    
+        &:hover {
+            background-color: #333432;
+            color: $white;
+            transform: scale(1.05); /* Sedikit memperbesar tombol saat hover */
+        }
     }
+    
 }
 
 .container-fluid {
     position: relative;
 }
+// Hero Sec
 .hero {
     position: relative; /* Referensi untuk positioning absolut di dalamnya */
     width: 100%;
@@ -103,27 +152,65 @@ body {
         top: 50px;
     }
 }
+
+// About
 .about {
     font-family: $font-family1;
     padding: 20px 0;
     padding-bottom: 50px;
-    h4 {
-        color: #851313;
-        font-size: 18px;
-        margin-top: 85px;
-        margin-left: 20px;
+}
+
+.about h4 {
+    color: #851313;
+    font-size: 18px;
+    margin-top: 85px;
+    margin-left: 20px;
+}
+
+/* Paragraph styling */
+.about {
+    font-family: $font-family1;
+    padding: 20px 0;
+    padding-bottom: 50px;
+}
+
+.about h4 {
+    color: #851313;
+    font-size: 18px;
+    margin-top: 85px;
+    margin-left: 20px;
+}
+
+/* Paragraph styling */
+.about p {
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 1.6;
+    padding-top: 20px;
+    max-width: 900px;
+
+    /* Animation properties */
+    opacity: 0;
+    transform: translateY(20px); /* Start with the text slightly lower */
+    animation: reveal 5s ease-out forwards;
+    /* Keyframes for the reveal animation */
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        color: $primary;
+        transform: translateY(20px); /* Starting point (slightly lower) */
     }
-    p {
-        font-size: 35px;
-        font-weight: 500;
-        line-height: 1.6;
-        padding-top: 20px;
-        max-width: 900px;
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ending point (normal position) */
     }
 }
 
 
-.testimonials-drivers {
+// Drivers
+.f1-drivers {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -152,29 +239,65 @@ body {
     }
     
     .driver-info h4 {
-      font-size: 18px;
+      font-size: 24px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
     
     .driver-info h2 {
-      font-size: 24px;
+      font-size: 18px;
+      font-weight: normal;
       margin: 10px 0;
     }
-    .btn-driver {
-        display: inline-block;
-        text-decoration: none;
-        bottom: 0;
-        color: $white;
-        font-size: 16px;
-    }
-    .btn:hover {
-        text-decoration: $white;
-        inline-size: auto;
-        transition: .3 ease-in;
-    }
+    /* Button Styling */
+.btn-driver {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
+.btn-driver span {
+    display: inline-block;
+    margin-left: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.btn-driver:hover {
+    color: rgb(255, 255, 255); /* Menggunakan warna semi transparan */
+    padding-right: 30px; /* Menambah ruang ketika di-hover */
+}
+
+.btn-driver:hover span {
+    transform: translateX(5px); /* Panah bergerak ke kanan saat hover */
+}
+
+/* Button Hover Animation (Optional Effect) */
+.btn-driver::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    color: rgb(255, 255, 255);
+    transition: all 0.4s ease;
+}
+
+.btn-driver:hover::before {
+    left: 100%;
+}
+
+}
+
+// Product
 .slider-product {
     position: relative;
     width: 100vw;
@@ -233,7 +356,7 @@ body {
   
     .explore-btn {
       background-color: #ffffff;
-      color: #00a651;
+      color: #000000;
     }
   
     .configure-btn {
@@ -276,9 +399,9 @@ body {
     /* Manual navigation buttons */
     .nav-manual {
       position: absolute;
-      bottom: 10px;
+      bottom: px;
       width: 100%;
-      height: 20px;
+      height: 10px;
       display: flex;
       justify-content: center;
     }
@@ -295,10 +418,207 @@ body {
     .manual-btn:hover {
       background: white;
     }
+}
+
+ 
+// News  
+ section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+ }
+ 
+ .news-wrapper {
+    display: flex;
+    justify-content: center; /* Centers the items horizontally */
+    flex-wrap: wrap; /* Ensures responsiveness */
+    gap: px; /* Adds space between items */
+ }
+ 
+ /* Title and "See All News" button styling */
+ .title-news {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+ }
+ 
+ .main-title {
+    font-size: 18px;
+    font-family: $font-family1;
+    color: $black;
+ }
+ 
+ .btn-news {
+    font-size: 16px;
+    font-family: $font-family1;
+    color: $black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+ }
+ 
+ .btn-news:hover {
+    display: inline;
+    margin-right: 20px;
+    text-decoration: none;
+    color: $primary;
+ }
+ 
+ /* News items layout */
+ .col {
+    display: inline-block;
+    width: 30%; /* Adjust width for 3 news items in a row */
+    margin: 0 10px;
+    vertical-align: top;
+    box-shadow: 0 4px 8px rgba(59, 93, 80, 0.1);
+    background-color: white;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: center;
+ }
+ 
+ .col:hover {
+    transform: translateY(-5px); /* Hover effect to lift the item */
+    box-shadow: 0 8px 16px rgba(59, 93, 80, 0.3);
+ }
+ 
+ /* Image styling */
+ .news-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #ddd;
+ }
+ 
+ /* Date styling */
+ .date {
+    font-size: 14px;
+    color: #777;
+    padding: 15px 20px 0;
+    margin: 0;
+ }
+ 
+ /* News title styling */
+ .news-title {
+    font-size: 18px;
+    color: #333;
+    padding: 0 20px 20px;
+    margin: 0;
+ }
+ 
+ /* Responsive Design */
+ @media (max-width: 1024px) {
+    .col {
+        width: 45%; /* Adjust to 2 columns on tablet */
+    }
+
+    .title-news {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .main-tittle {
+        margin-bottom: 20px;
+    }
+ }
+ 
+ @media (max-width: 768px) {
+    .col {
+        width: 100%; /* 1 column on mobile */
+        margin-bottom: 20px;
+    }
+
+    .btn-news {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+ }
+
+// Footer//
+/* General Footer Styling */
+footer {
+  background-color: #f9f9f9;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Footer Links */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Bottom (Social Icons and Legal Links) */
+.footer-bottom {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.social-icons li {
+  margin-right: 15px;
+}
+
+.social-icons li img {
+  width: 24px;
+  height: 24px;
+}
+
+.legal-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.legal-links a {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .footer-links ul li {
+    display: block;
+    margin: 10px 0;
   }
-  
-  
-  
 
-  
-
+  .social-icons {
+    margin-bottom: 20px;
+  }
+}
